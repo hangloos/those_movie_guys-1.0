@@ -1,3 +1,6 @@
 <h1>in home </h1>
 
-{{ vm.name}}
+{{ vm.user.email}}
+
+<button ng-if="!!vm.user.email" ng-click="vm.logout()">Logout</button>
+<button ng-if="!vm.user.email" ng-click="vm.login()">Login</button>
