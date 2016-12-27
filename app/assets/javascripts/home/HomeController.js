@@ -11,18 +11,13 @@
         vm.logout = Auth.logout
         vm.login = login 
 
-        var credentials = {
-        email: "ericloos00@gmail.com",
-        password: "indiana10"
-      }
-
         var config = {
           headers: {
             'X-HTTP-Method-Override': 'POST'
           }
         }
         function login(){
-        Auth.login(credentials, config)
+        Auth.login(vm.userForm, config)
           .then(function(user){
             vm.user = user
           }, function(error){

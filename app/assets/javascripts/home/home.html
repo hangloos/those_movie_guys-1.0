@@ -1,6 +1,12 @@
-<h1>in home </h1>
-
-{{ vm.user.email}}
+<h1 ng-if="!vm.user.username"> Welcome {{vm.user.email}}</h1>
 
 <button ng-if="!!vm.user.email" ng-click="vm.logout()">Logout</button>
-<button ng-if="!vm.user.email" ng-click="vm.login()">Login</button>
+<form ng-if="!vm.user.email" ng-submit="vm.login()">
+  <label for="username">Username:</label>
+  <input type="text" ng-model="vm.userForm.username"><br>
+  <label for="email">Email:</label>
+  <input type="email" ng-model="vm.userForm.email"><br>
+  <label for="password">Password:</label>
+  <input type="password" ng-model="vm.userForm.password"><br>
+  <input type="submit" value="Login">
+</form>
