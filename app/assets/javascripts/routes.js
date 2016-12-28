@@ -23,6 +23,12 @@
             controller: 'HomeController as vm'
           })
 
+          .state('about', {
+            url: '/about',
+            templateUrl: 'home/about.html',
+            controller: 'HomeController as vm'
+          })
+
           $urlRouterProvider.otherwise('/')
 
       })
