@@ -1,6 +1,6 @@
 
 
-Review.create({
+Review.create(
   actors: "Tim Robbins", 
   awards: "Oscar", 
   box_office: 1500000, 
@@ -25,4 +25,4 @@ Review.create({
   tomato_user: 98, 
   tomato_user_reviews: 881901, 
   tomato_critics: 91, 
-  tomato_url: "http://www.rottentomatoes.com/m/shawshank_redemption/"})
+  tomato_url: "http://www.rottentomatoes.com/m/shawshank_redemption/")
