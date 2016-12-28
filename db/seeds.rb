@@ -1,7 +1,28 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+
+
+Review.create({
+  actors: "Tim Robbins", 
+  awards: "Oscar", 
+  box_office: 1500000, 
+  director: "Eric Loos", 
+  genre_id: 1, 
+  language: "English", 
+  picture_url: "https://images-na.ssl-images-amazon.com/images/M/MV5BODU4MjU4NjIwNl5BMl5BanBnXkFtZTgwMDU2MjEyMDE@._V1_SX300.jpg",
+  production: 'Warner Brothers', 
+  rated: "R", 
+  year: "1994", 
+  runtime: "142 min", 
+  title: "The Shawshank Redemption", 
+  review_type: "movie", 
+  imdb_id: "tt0111161", 
+  viewing_platform: "Netflix", 
+  those_movie_guys_rating: 9.4, 
+  those_movie_guys_review: "absolute masterpiece!", 
+  writer: "Eric Loos The Writer", 
+  imdb_rating: 9.3, 
+  imdb_votes: 173939, 
+  tomato_consensus: "The Shawshank Redemption is an uplifting, deeply satisfying prison drama with sensitive direction and fine performances.", 
+  tomato_user: 98, 
+  tomato_user_reviews: 881901, 
+  tomato_critics: 91, 
+  tomato_url: "http://www.rottentomatoes.com/m/shawshank_redemption/"})

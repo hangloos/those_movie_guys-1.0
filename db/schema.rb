@@ -10,7 +10,43 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161228162423) do
+ActiveRecord::Schema.define(version: 20161228203434) do
+
+  create_table "genres", force: :cascade do |t|
+    t.string   "type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.string   "actors"
+    t.string   "awards"
+    t.decimal  "box_office"
+    t.string   "director"
+    t.integer  "genre_id"
+    t.string   "language"
+    t.string   "picture_url"
+    t.string   "production"
+    t.string   "rated"
+    t.string   "year"
+    t.string   "runtime"
+    t.string   "title"
+    t.string   "review_type"
+    t.string   "imdb_id"
+    t.string   "viewing_platform"
+    t.decimal  "those_movie_guys_rating"
+    t.string   "those_movie_guys_review"
+    t.string   "writer"
+    t.decimal  "imdb_rating"
+    t.integer  "imdb_votes"
+    t.string   "tomato_consensus"
+    t.integer  "tomato_user"
+    t.integer  "tomato_user_reviews"
+    t.integer  "tomato_critics"
+    t.string   "tomato_url"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

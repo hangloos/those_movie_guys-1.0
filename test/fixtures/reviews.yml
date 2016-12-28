@@ -1,0 +1,55 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  actors: MyString
+  awards: MyString
+  box_office: 9.99
+  director: MyString
+  genre_id: 1
+  language: MyString
+  picture: MyString
+  production: MyString
+  rated: MyString
+  year: MyString
+  runtime: MyString
+  title: MyString
+  type: 
+  imdb_id: MyString
+  viewing_platform: MyString
+  those_movie_guy_rating: 9.99
+  those_movie_guys_review: MyString
+  writer: MyString
+  imdbRating: 9.99
+  imdbVotes: 1
+  tomatoConsensus: MyString
+  tomatoUser: 1
+  tomatoUserReviews: 1
+  tomatoCritics: 1
+  tomatoURL: MyString
+
+two:
+  actors: MyString
+  awards: MyString
+  box_office: 9.99
+  director: MyString
+  genre_id: 1
+  language: MyString
+  picture: MyString
+  production: MyString
+  rated: MyString
+  year: MyString
+  runtime: MyString
+  title: MyString
+  type: 
+  imdb_id: MyString
+  viewing_platform: MyString
+  those_movie_guy_rating: 9.99
+  those_movie_guys_review: MyString
+  writer: MyString
+  imdbRating: 9.99
+  imdbVotes: 1
+  tomatoConsensus: MyString
+  tomatoUser: 1
+  tomatoUserReviews: 1
+  tomatoCritics: 1
+  tomatoURL: MyString
