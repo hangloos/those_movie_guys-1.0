@@ -32,7 +32,8 @@
                   $rootScope.currentUser = user
                   $location.path('/')
                 }, function(error)  {
-                  console.log(error)
+                  $rootScope.errors = error.data.errors
+                  $rootScope.error = error.data.error
                 });
           }
 
@@ -48,7 +49,8 @@
                       $rootScope.currentUser = registeredUser
                       $location.path('/')
                 }, function(error)  {
-                  console.log(error)
+                  $rootScope.errors = error.data.errors
+                  $rootScope.error = error.data.error
             });
         }
 

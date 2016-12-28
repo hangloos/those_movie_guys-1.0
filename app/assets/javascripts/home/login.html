@@ -1,9 +1,13 @@
+<p ng-if="!!error">Error loggin in - {{ error }} </p>
+<p ng-if="!!errors">Errors logging in - {{ errors }} </p>
+
+
 <form ng-if="!currentUser.username" ng-submit="vm.login()">
   <label for="username">Username:</label>
-  <input type="text" ng-model="vm.userForm.username"><br>
+  <input type="text" ng-model="vm.userForm.username" required><br>
   <label for="email">Email:</label>
-  <input type="email" ng-model="vm.userForm.email"><br>
+  <input type="email" ng-model="vm.userForm.email" required><br>
   <label for="password">Password:</label>
-  <input type="password" ng-model="vm.userForm.password"><br>
+  <input type="password" ng-model="vm.userForm.password" required><br>
   <input type="submit" value="Login">
 </form>

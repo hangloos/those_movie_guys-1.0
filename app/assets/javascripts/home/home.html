@@ -2,5 +2,5 @@
 
 <button ng-if="!!currentUser.username" ng-click="vm.logout()">Logout</button>
 
-<a ui-sref="login">Login</a><br>
-<a ui-sref="register">Register</a>
+<a ng-if="!currentUser.username" ui-sref="login">Login</a><br>
+<a ng-if="!currentUser.username" ui-sref="register">Register</a>
