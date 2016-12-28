@@ -35,6 +35,8 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'devise'
 
+gem 'pry'
+
 gem 'active_model_serializers'
 
 gem 'angular-rails-templates'
