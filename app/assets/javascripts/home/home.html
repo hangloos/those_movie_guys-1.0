@@ -2,22 +2,5 @@
 
 <button ng-if="!!currentUser.username" ng-click="vm.logout()">Logout</button>
 
-<form ng-if="!currentUser.username" ng-submit="vm.login()">
-  <label for="username">Username:</label>
-  <input type="text" ng-model="vm.userForm.username"><br>
-  <label for="email">Email:</label>
-  <input type="email" ng-model="vm.userForm.email"><br>
-  <label for="password">Password:</label>
-  <input type="password" ng-model="vm.userForm.password"><br>
-  <input type="submit" value="Login">
-</form>
-
-<form ng-if="!currentUser.username" ng-submit="vm.register()">
-  <label for="username">Username:</label>
-  <input type="text" ng-model="vm.newUser.username"><br>
-  <label for="email">Email:</label>
-  <input type="email" ng-model="vm.newUser.email"><br>
-  <label for="password">Password:</label>
-  <input type="password" ng-model="vm.newUser.password"><br>
-  <input type="submit" value="Register">
-</form>
+<a ui-sref="login">Login</a><br>
+<a ui-sref="register">Register</a>

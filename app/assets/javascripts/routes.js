@@ -11,6 +11,18 @@
               controller: 'HomeController as vm'
           })
 
+          .state('login', {
+            url: '/login',
+            templateUrl: 'home/login.html',
+            controller: 'HomeController as vm'
+          })
+
+          .state('register', {
+            url: '/register',
+            templateUrl: 'home/register.html',
+            controller: 'HomeController as vm'
+          })
+
           $urlRouterProvider.otherwise('/')
 
       })

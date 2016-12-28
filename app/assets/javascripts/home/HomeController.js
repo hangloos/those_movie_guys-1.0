@@ -6,7 +6,7 @@
       .controller('HomeController', HomeController)
 
 
-      function HomeController(Auth, $rootScope) {
+      function HomeController(Auth, $rootScope, $location) {
         var vm = this
         vm.logout = Auth.logout
         vm.login = login
@@ -30,6 +30,7 @@
             Auth.login(vm.userForm, config)
                 .then(function(user)  {
                   $rootScope.currentUser = user
+                  $location.path('/')
                 }, function(error)  {
                   console.log(error)
                 });
@@ -45,6 +46,7 @@
             Auth.register(vm.newUser, config)
                   .then(function(registeredUser)  {
                       $rootScope.currentUser = registeredUser
+                      $location.path('/')
                 }, function(error)  {
                   console.log(error)
             });
