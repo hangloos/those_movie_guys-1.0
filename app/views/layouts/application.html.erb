@@ -7,10 +7,9 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <a ui-sref="home">Home</a> - <a ng-if="!currentUser.username" ui-sref="login">Login</a> - <a ng-if="!currentUser.username" ui-sref="register">Register</a> - <a ui-sref="about">About Those Movie Guys</a>
-
-    <div class="create_review_button">
-      <button ui-sref="createReview" >Create Review</button>
-    </div>
+    
+    <button ui-sref="createReview" >Create Review</button>
+    
 
   </head>
 

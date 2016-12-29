@@ -1,3 +1,3 @@
 class GenreSerializer < ActiveModel::Serializer
-  attributes :id, :type
+  attributes :id, :name, :review_id
 end

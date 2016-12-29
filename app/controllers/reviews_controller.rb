@@ -10,7 +10,7 @@ class ReviewsController < ApplicationController
     if review.save
       render json: review
     else
-      render json: { erros: review.errors.full_messages }, status: :unprocessable_entity
+      render json: { errors: review.errors.full_messages }, status: :unprocessable_entity
     end
   end
 
@@ -24,7 +24,7 @@ class ReviewsController < ApplicationController
     if review.update(review_params)
       render json: review
     else
-      render json: { erros: review.errors.full_messages }, status: :unprocessable_entity
+      render json: { errors: review.errors.full_messages }, status: :unprocessable_entity
     end
   end
 

@@ -29,6 +29,18 @@
             controller: 'HomeController as vm'
           })
 
+          // .state('reviews', {
+          //   url: '/reviews',
+          //   templateUrl: 'review/reviews.html',
+          //   controller: 'ReviewsController as vm'
+          // })
+
+          .state('createReview', {
+            url: '/review/create',
+            templateUrl: 'review/new.html',
+            controller: 'ReviewController as vm',
+          })
+
           $urlRouterProvider.otherwise('/')
 
       })
