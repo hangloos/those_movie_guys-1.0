@@ -5,22 +5,25 @@
       .module('those-movie-guys')
       .controller('ReviewController', ReviewController)
 
-
-       function ReviewController($scope, $http) {
+      var data;
+       function ReviewController(review) {
 
         var vm = this;
 
         vm.review = {}
 
-        vm.getInformation = function(){
+        function getInformation() {
           $http.get('http://www.omdbapi.com/?tomatoes=true&i=' + vm.review.imdb_id)
           .success(function (response){
-            debugger
+            data = response
 
             //Im able to get the right movie to come up based on the imdb id
           })
         }
-       }
+        
+
+
+        }
 
 
 

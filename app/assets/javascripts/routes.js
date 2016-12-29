@@ -29,12 +29,6 @@
             controller: 'HomeController as vm'
           })
 
-          .state('createReview', {
-            url: '/review/create',
-            templateUrl: 'review/form.html',
-            controller: 'ReviewController as vm',
-          })
-
           $urlRouterProvider.otherwise('/')
 
       })
