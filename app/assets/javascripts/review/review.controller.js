@@ -41,7 +41,15 @@
           vm.newReview.tomato_consensus = movie.tomatoConsensus
           vm.newReview.tomato_user = movie.tomatoUserMeter
           vm.newReview.tomato_critics = movie.tomatoMeter
-          vm.newReview.tomato_url = movie.tomatoURL 
+          vm.newReview.tomato_url = movie.tomatoURL
+          var genre_array = []
+          var genres = movie.Genre.split(", ")
+          
+          for ( var i = 0; i < genres.length; i++)  {
+            genre_array.push({name: genres[i]})
+          }
+
+          vm.newReview.genres_attributes = genre_array
 
 
           return ReviewsFactory.createReview(vm.newReview)

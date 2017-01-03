@@ -1,0 +1,3 @@
+class GenreReview < ApplicationRecord
+
+end

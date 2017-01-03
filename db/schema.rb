@@ -10,11 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170103181347) do
+ActiveRecord::Schema.define(version: 20170103213410) do
+
+  create_table "genre_review", force: :cascade do |t|
+    t.integer "review_id"
+    t.integer "genre_id"
+  end
 
   create_table "genres", force: :cascade do |t|
     t.string   "name"
-    t.integer  "review_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -24,7 +28,6 @@ ActiveRecord::Schema.define(version: 20170103181347) do
     t.string   "awards"
     t.decimal  "box_office"
     t.string   "director"
-    t.integer  "genre_id"
     t.string   "language"
     t.string   "picture_url"
     t.string   "production"
