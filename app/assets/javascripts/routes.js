@@ -29,11 +29,11 @@
             controller: 'HomeController as vm'
           })
 
-          // .state('reviews', {
-          //   url: '/reviews',
-          //   templateUrl: 'review/reviews.html',
-          //   controller: 'ReviewsController as vm'
-          // })
+          .state('reviews', {
+            url: '/reviews',
+            templateUrl: 'review/reviews.html',
+            controller: 'ReviewController as vm'
+          })
 
           .state('createReview', {
             url: '/review/create',

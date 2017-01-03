@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161228203434) do
+ActiveRecord::Schema.define(version: 20170103181347) do
 
   create_table "genres", force: :cascade do |t|
     t.string   "name"
@@ -42,7 +42,6 @@ ActiveRecord::Schema.define(version: 20161228203434) do
     t.integer  "imdb_votes"
     t.string   "tomato_consensus"
     t.integer  "tomato_user"
-    t.integer  "tomato_user_reviews"
     t.integer  "tomato_critics"
     t.string   "tomato_url"
     t.datetime "created_at",              null: false

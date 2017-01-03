@@ -1,5 +1,3 @@
-(function () {
-    'use strict'
 
     function ReviewsFactory($http)  {
 
@@ -8,11 +6,12 @@
         getReview: getReview,
         createReview: createReview,
         updateReview: updateReview,
-        deleteReview: deleteReview
+        deleteReview: deleteReview,
+        getInformation: getInformation
       }
 
       function getReviews() {
-        $http.get('/reviews')
+        return $http.get('/reviews')
               .then(handleResponse)
               .catch(handleError)
 
@@ -23,6 +22,7 @@
       }
 
       function createReview(review) {
+      
           var req = {
             method: 'POST',
             url: '/reviews',
@@ -33,10 +33,17 @@
               review: review
             }
           };
-
+          console.log(req)
           return $http(req)
                     .catch(handleError)
       }
+
+      function getInformation(id) {
+         return $http.get('http://www.omdbapi.com/?tomatoes=true&i=' + id)
+                    .then(handleResponse)
+                    .catch(handleError)
+        }
+
 
       function updateReview() {
 
@@ -47,6 +54,7 @@
       }
 
       function handleResponse(response) {
+        console.log(response)
         return response.data
 
       }
@@ -62,5 +70,3 @@
     angular
       .module('those-movie-guys')
       .factory('ReviewsFactory', ReviewsFactory)
-
-  }())

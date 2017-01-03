@@ -1,4 +1,4 @@
-<form  ng-submit="vm.createReview()">
+<form  ng-submit="vm.createReviewInformation()">
   <div >
     <label>IMDB Id</label>
     <input type="text" ng-model="vm.newReview.imdb_id" placeholder="Copy IMDB Id from URL">
@@ -9,11 +9,11 @@
   </div>
   <div >
     <label>Rating</label>
-    <input type="number" step="0.1" ng-model="vm.newReview.rating" placeholder="Rating 1-10 (Decimal)">
+    <input type="number" step="0.1" ng-model="vm.newReview.those_movie_guys_rating" placeholder="Rating 1-10 (Decimal)">
   </div>
   <div >
     <label>Review</label>
-    <textarea rows="2" ng-model="vm.newReview.description" placeholder="Short Description"></textarea>
+    <textarea rows="2" ng-model="vm.newReview.those_movie_guys_review" placeholder="Short Description"></textarea>
   </div>
   <button  type="submit">Submit</button>
 </form>
