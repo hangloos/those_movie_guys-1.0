@@ -39,4 +39,9 @@
   font-size: 20px;
 }
 
+.tmgRating  {
+  background-color: blue;
+  color: #fff;
+  padding: .2em .6em .3em;
+}
 

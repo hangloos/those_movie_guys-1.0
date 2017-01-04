@@ -3,10 +3,13 @@
 <button ng-if="!!currentUser.username" ng-click="vm.logout()">Logout</button>
 
 
-<ul ng-repeat="review in vm.reviews | orderBy: '+':true">
+<input type="text" ng-model="search.title" ng-model-options="{ debounce: 800 }" class="form-control" placeholder="Search By Movie Title" autofocus /> <input type="text" ng-model="search.those_movie_guys_rating" ng-model-options="{ debounce: 800 }" class="form-control" placeholder="Search By Rating" autofocus />
+
+<ul ng-repeat="review in vm.reviews | orderBy: '+':true | filter:search">
+
   <img ng-src="{{ review.picture_url }}" class="thumbnail movie-poster" >
         
-          <span class="span-outer"><a href="http://imdb.com/title/{{ review.imdb_id }}" target="_blank">{{ review.title }}</a></span>- {{ review.those_movie_guys_rating }}
+          <span class="span-outer"><a href="http://imdb.com/title/{{ review.imdb_id }}" target="_blank">{{ review.title }}</a></span>- <span class="tmgRating">{{ review.those_movie_guys_rating }}</span> - {{review.viewing_platform}}
         <br>
           <label>Directors:</label>
           <span>{{review.director}}</span>
