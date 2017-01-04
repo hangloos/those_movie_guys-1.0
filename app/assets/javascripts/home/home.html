@@ -4,12 +4,9 @@
 
 
 <ul ng-repeat="review in vm.reviews | orderBy: review.created_at">
-  <img ng-src="{{ review.picture_url }}" class="movie-poster" style="position:relative;">
+  <img ng-src="{{ review.picture_url }}" class="thumbnail movie-poster" >
         
-      <div class="center">
-          <span class="span-outer">
-            <a href="http://imdb.com/title/{{ review.imdb_id }}" target="_blank">{{ review.title }}</a>
-          </span>, {{ review.year }}
+          <span class="span-outer"><a href="http://imdb.com/title/{{ review.imdb_id }}" target="_blank">{{ review.title }}</a></span>, {{ review.rating }}
         <br>
           <label>Directors:</label>
           <span>{{review.director}}</span>
@@ -26,6 +23,6 @@
           <label>Genres:</label>
           <span ng-repeat="x in review.genres"><a target="_blank" href="http://www.imdb.com/search/title?genres={{x.name}}&explore={{x.name}}">{{x.name}} </a></span>
 
-      </div>
+      
 
 </ul>
