@@ -2,5 +2,6 @@
 
 <button ng-if="!!currentUser.username" ng-click="vm.logout()">Logout</button>
 
-<a ui-sref="reviews">Reviews</a>
-
+<ul ng-repeat="review in vm.reviews">
+    <li>{{review.title}}</li>
+</ul>

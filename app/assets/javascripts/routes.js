@@ -8,7 +8,7 @@
           .state('home', {
               url: '/',
               templateUrl: 'home/home.html',
-              controller: 'HomeController as vm'
+              controller: 'ReviewController as vm'
           })
 
           .state('login', {
@@ -27,12 +27,6 @@
             url: '/about',
             templateUrl: 'home/about.html',
             controller: 'HomeController as vm'
-          })
-
-          .state('reviews', {
-            url: '/reviews',
-            templateUrl: 'review/reviews.html',
-            controller: 'ReviewController as vm'
           })
 
           .state('createReview', {
