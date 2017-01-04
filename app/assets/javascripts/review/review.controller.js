@@ -51,6 +51,17 @@
 
           vm.newReview.genres_attributes = genre_array
 
+           var actor_array = []
+           var actors = movie.Actors.split(", ")
+
+           for ( var i = 0; i < actors.length; i++)  {
+             actor_array.push({name: actors[i]})
+           }
+
+           vm.newReview.actors_attributes = actor_array
+
+
+
 
           return ReviewsFactory.createReview(vm.newReview)
                             .then(getReviews)
