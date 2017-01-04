@@ -29,11 +29,11 @@
 }
 
 .movie-poster {
-  float: left;
   width: 150px;
   margin-right: 10px;
+  vertical-align: middle;
+  
 }
 
-.span-outer {
-  font-size: 20px;
-}
+
+
