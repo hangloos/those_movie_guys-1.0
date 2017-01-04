@@ -11,6 +11,14 @@
         
           <span class="span-outer"><a href="http://imdb.com/title/{{ review.imdb_id }}" target="_blank">{{ review.title }}</a></span>- <span class="tmgRating">{{ review.those_movie_guys_rating }}</span> - {{review.viewing_platform}}
         <br>
+
+        <span class="span-outer"><a href="http://imdb.com/title/{{ review.imdb_id }}" target="_blank"><img src="http://ia.media-imdb.com/images/M/MV5BMTQyMTcxNjg5Nl5BMl5BcG5nXkFtZTgwOTgzNDg0MjE@._V1_.png" class="imdbLogo"> - {{review.imdb_rating}}</a></span>
+
+        <span class="span-outer"><a href="{{review.tomato_url}}" target="_blank"><img src="http://static.tvtropes.org/pmwiki/pub/images/rotten_tomatoes_8290.jpg" class="imdbLogo"> - RT Critics - {{review.tomato_critics}}%</a></span>
+
+        <span class="span-outer"><a href="{{review.tomato_url}}" target="_blank"><img src="http://static.tvtropes.org/pmwiki/pub/images/rotten_tomatoes_8290.jpg" class="imdbLogo"> - RT User - {{review.tomato_user}}</a>%</span>
+
+        <br>
           <label>Directors:</label>
           <span>{{review.director}}</span>
         <br>
