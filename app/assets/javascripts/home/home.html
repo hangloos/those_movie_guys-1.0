@@ -3,10 +3,10 @@
 <button ng-if="!!currentUser.username" ng-click="vm.logout()">Logout</button>
 
 
-<ul ng-repeat="review in vm.reviews | orderBy: review.created_at">
+<ul ng-repeat="review in vm.reviews | orderBy: '+':true">
   <img ng-src="{{ review.picture_url }}" class="thumbnail movie-poster" >
         
-          <span class="span-outer"><a href="http://imdb.com/title/{{ review.imdb_id }}" target="_blank">{{ review.title }}</a></span>, {{ review.rating }}
+          <span class="span-outer"><a href="http://imdb.com/title/{{ review.imdb_id }}" target="_blank">{{ review.title }}</a></span>- {{ review.those_movie_guys_rating }}
         <br>
           <label>Directors:</label>
           <span>{{review.director}}</span>
