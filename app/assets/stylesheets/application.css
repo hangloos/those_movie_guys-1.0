@@ -29,9 +29,9 @@
 }
 
 .movie-poster {
-  
   width: 150px;
   margin-right: 10px;
+  vertical-align: left;
 }
 
 

@@ -14,6 +14,7 @@
         vm.deleteReview = deleteReview;
         vm.createReviewInformation = createReviewInformation;
         vm.reset = reset;
+        
 
         activate();
 
@@ -99,6 +100,7 @@
          function reset() {
           vm.newReview = {}
          }
+
     
 
         }

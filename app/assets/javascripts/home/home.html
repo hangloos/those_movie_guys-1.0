@@ -3,20 +3,21 @@
 <button ng-if="!!currentUser.username" ng-click="vm.logout()">Logout</button>
 
 
-<input type="text" ng-model="search.title" ng-model-options="{ debounce: 800 }" class="form-control" placeholder="Search By Movie Title" autofocus /> <input type="text" ng-model="search.those_movie_guys_rating" ng-model-options="{ debounce: 800 }" class="form-control" placeholder="Search By Rating" autofocus />
+<input type="text" ng-model="search.title" ng-model-options="{ debounce: 800 }" class="form-control" placeholder="Search By Movie Title" autofocus /> <input type="text" ng-model="search.those_movie_guys_rating" ng-model-options="{ debounce: 800 }" class="form-control" placeholder="Search By Rating" autofocus /> <input type="text" ng-model="search.genres.name" ng-model-options="{ debounce: 800 }" class="form-control" placeholder="Search By Genre" autofocus />
 
 <ul ng-repeat="review in vm.reviews | orderBy: '+':true | filter:search">
 
-  <img ng-src="{{ review.picture_url }}" class="thumbnail movie-poster" >
-        
-          <span class="span-outer"><a href="http://imdb.com/title/{{ review.imdb_id }}" target="_blank">{{ review.title }}</a></span>- <span class="tmgRating">{{ review.those_movie_guys_rating }}</span> - {{review.viewing_platform}}
+  <img ng-src="{{ review.picture_url }}" class="thumbnail movie-poster">
+
+
+        <span class="span-outer"><a href="http://imdb.com/title/{{ review.imdb_id }}" target="_blank">{{ review.title }}</a></span>- <span class="tmgRating">{{ review.those_movie_guys_rating }}</span> - {{review.viewing_platform}}
         <br>
 
         <span class="span-outer"><a href="http://imdb.com/title/{{ review.imdb_id }}" target="_blank"><img src="http://ia.media-imdb.com/images/M/MV5BMTQyMTcxNjg5Nl5BMl5BcG5nXkFtZTgwOTgzNDg0MjE@._V1_.png" class="imdbLogo"> - {{review.imdb_rating}}</a></span>
 
         <span class="span-outer"><a href="{{review.tomato_url}}" target="_blank"><img src="http://static.tvtropes.org/pmwiki/pub/images/rotten_tomatoes_8290.jpg" class="imdbLogo"> - RT Critics - {{review.tomato_critics}}%</a></span>
 
-        <span class="span-outer"><a href="{{review.tomato_url}}" target="_blank"><img src="http://static.tvtropes.org/pmwiki/pub/images/rotten_tomatoes_8290.jpg" class="imdbLogo"> - RT User - {{review.tomato_user}}</a>%</span>
+        <span class="span-outer"><a href="{{review.tomato_url}}" target="_blank"><img src="http://static.tvtropes.org/pmwiki/pub/images/rotten_tomatoes_8290.jpg" class="imdbLogo"> - RT User - {{review.tomato_user}}%</a></span>
 
         <br>
           <label>Directors:</label>
@@ -33,7 +34,5 @@
         <br>
           <label>Genres:</label>
           <span ng-repeat="x in review.genres"><a target="_blank" href="http://www.imdb.com/search/title?genres={{x.name}}&explore={{x.name}}">{{x.name}} </a></span>
-
-      
 
 </ul>
