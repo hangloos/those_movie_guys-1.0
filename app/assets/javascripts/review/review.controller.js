@@ -1,11 +1,9 @@
-(function () {
-    'use strict'
 
     angular
       .module('those-movie-guys')
       .controller('ReviewController', ReviewController)
 
-       function ReviewController($scope, ReviewsFactory) {
+       function ReviewController($rootScope, ReviewsFactory) {
 
         var vm = this;
 
@@ -15,7 +13,8 @@
         vm.createReviewInformation = createReviewInformation;
         vm.reset = reset;
         vm.showEditForm = showEditForm;
-        vm.editTrueValue = false
+        vm.editTrueValue = false;
+        vm.Bookmark = Bookmark;
 
         activate();
 
@@ -88,6 +87,7 @@
 
         function deleteReview(id) {
           return ReviewsFactory.deleteReview(id)
+                            .then(getReviews)
           
         }
 
@@ -108,11 +108,12 @@
           vm.newReview = {}
           vm.editTrueValue = false
          }
+
+         function Bookmark()  {
+          debugger
+         }
     
 
         }
 
 
-
-
-  }())
