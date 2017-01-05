@@ -5,7 +5,7 @@
       .module('those-movie-guys')
       .controller('ReviewController', ReviewController)
 
-       function ReviewController(ReviewsFactory) {
+       function ReviewController($scope, ReviewsFactory) {
 
         var vm = this;
 
@@ -66,9 +66,6 @@
 
            vm.newReview.actors_attributes = actor_array
 
-
-
-
           return ReviewsFactory.createReview(vm.newReview)
                             .then(getReviews)
          }
@@ -85,7 +82,7 @@
 
         function editReviewRating(id) {
           return ReviewsFactory.updateReview(id,this.newReview)
-          vm.editTrueValue = false
+                            .then(getReviews)
           
         }
 
@@ -109,6 +106,7 @@
 
          function reset() {
           vm.newReview = {}
+          vm.editTrueValue = false
          }
     
 
