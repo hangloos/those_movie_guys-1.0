@@ -35,4 +35,7 @@
           <label>Genres:</label>
           <span ng-repeat="x in review.genres"><a target="_blank" href="http://www.imdb.com/search/title?genres={{x.name}}&explore={{x.name}}">{{x.name}} </a></span>
 
+          <button ng-click="vm.deleteReview(review.id)">Delete</button>
+
+
 </ul>

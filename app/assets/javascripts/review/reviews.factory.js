@@ -22,7 +22,8 @@
       }
 
       function getReview(id)  {
-        
+        return $http.get('/reviews/' + id)
+                  .then(handleResponse)
       }
 
       function createReview(review) {
@@ -53,10 +54,24 @@
 
       }
 
-      function deleteReview() {
+      function deleteReview(id) {
 
-      }
+        var req = {
+          method: 'DELETE',
+          url: '/reviews/' + id,
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        }
 
+        return $http(req)
+                     .then(handleDelete)
+        }
+      
+
+      function handleDelete(response) {
+        alert("Successfully Deleted")
+      }  
       function handleResponse(response) {
         console.log(response)
         return response.data

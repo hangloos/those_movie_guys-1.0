@@ -83,7 +83,8 @@
           
         }
 
-        function deleteReview() {
+        function deleteReview(id) {
+          return ReviewsFactory.deleteReview(id)
           
         }
 

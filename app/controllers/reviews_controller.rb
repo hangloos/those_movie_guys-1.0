@@ -30,6 +30,7 @@ class ReviewsController < ApplicationController
 
   def destroy
     review = Review.find_by_id(params[:id])
+    #binding.pry
     review.destroy
   end
 
@@ -40,7 +41,7 @@ class ReviewsController < ApplicationController
   def review_params
     params.require(:review).permit(:awards, :box_office, :director, :genre_id, :language, :picture_url, :production, 
       :production, :rated, :year, :runtime, :title, :review_type, :imdb_id, :viewing_platform, :those_movie_guys_rating,
-      :those_movie_guys_review, :writer, :imdb_rating, :imdb_votes, :tomato_consensus, :tomato_user, :tomato_critics, :tomato_url, genres_attributes: [:name], actors_attributes: [:name])
+      :those_movie_guys_review, :writer, :imdb_rating, :imdb_votes, :tomato_consensus, :tomato_user, :tomato_critics, :tomato_url, genres_attributes: [:id, :name], actors_attributes: [:id, :name])
   end
 
 end
