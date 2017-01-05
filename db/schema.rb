@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170104155434) do
+ActiveRecord::Schema.define(version: 20170105003306) do
 
   create_table "actor_reviews", force: :cascade do |t|
     t.integer  "actor_id"
@@ -37,7 +37,6 @@ ActiveRecord::Schema.define(version: 20170104155434) do
   end
 
   create_table "reviews", force: :cascade do |t|
-    t.string   "actors"
     t.string   "awards"
     t.decimal  "box_office"
     t.string   "director"

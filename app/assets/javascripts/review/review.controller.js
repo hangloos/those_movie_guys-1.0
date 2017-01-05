@@ -88,7 +88,10 @@
         }
 
         function setReviews(data)  {
-          return vm.reviews = data
+          vm.totalReviews = data.length
+          vm.reviews = data
+          return vm.reviews
+
         }
 
         function createReviewInformation() {
@@ -100,7 +103,6 @@
          function reset() {
           vm.newReview = {}
          }
-
     
 
         }

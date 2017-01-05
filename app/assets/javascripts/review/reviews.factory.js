@@ -1,4 +1,8 @@
 
+     angular
+      .module('those-movie-guys')
+      .factory('ReviewsFactory', ReviewsFactory)
+
     function ReviewsFactory($http)  {
 
       return {
@@ -17,8 +21,8 @@
 
       }
 
-      function getReview()  {
-
+      function getReview(id)  {
+        
       }
 
       function createReview(review) {
@@ -65,8 +69,3 @@
       }
 
     }
-
-
-    angular
-      .module('those-movie-guys')
-      .factory('ReviewsFactory', ReviewsFactory)
