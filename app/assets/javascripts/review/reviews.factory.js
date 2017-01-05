@@ -50,12 +50,11 @@
         }
 
 
-      function updateReview(rating) {
+      function updateReview(id,rating) {
 
-        var reviewId = location.hash.slice(15)
         var req = {
           method: 'PATCH',
-          url: '/reviews/'+reviewId,
+          url: '/reviews/'+id,
           headers: {
             'Content-Type': 'application/json'
           },

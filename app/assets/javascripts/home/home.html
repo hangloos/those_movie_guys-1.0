@@ -37,6 +37,16 @@
 
           <button ng-click="vm.deleteReview(review.id)">Delete</button>
           <button ui-sref="editReview({id: review.id})">Edit</button>
+          <button ng-click="vm.showEditForm()">Edit</button>
+
+          <form ng-show="vm.editTrueValue" ng-submit="vm.editReviewRating(review.id)">
+          <div >
+              <label>Rating</label>
+              <input type="number" step="0.1" ng-model="vm.newReview.those_movie_guys_rating" placeholder="Rating 1-10 (Decimal)" required>
+          </div>
+           <button  type="submit">Edit</button>
+          <button type="reset" ng-click="vm.reset()">Reset</button>
+          </form>
 
 
 </ul>

@@ -14,7 +14,8 @@
         vm.deleteReview = deleteReview;
         vm.createReviewInformation = createReviewInformation;
         vm.reset = reset;
-        
+        vm.showEditForm = showEditForm;
+        vm.editTrueValue = false
 
         activate();
 
@@ -22,6 +23,9 @@
           getReviews();
         }
 
+        function showEditForm() {
+          vm.editTrueValue = true
+        }
 
         function setNewReview(movie) {
           
@@ -79,8 +83,9 @@
           
         }
 
-        function editReviewRating() {
-          return ReviewsFactory.updateReview(this.newReview)
+        function editReviewRating(id) {
+          return ReviewsFactory.updateReview(id,this.newReview)
+          vm.editTrueValue = false
           
         }
 
