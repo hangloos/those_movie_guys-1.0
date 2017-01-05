@@ -30,8 +30,9 @@ class ReviewsController < ApplicationController
 
   def destroy
     review = Review.find_by_id(params[:id])
-    #binding.pry
     review.destroy
+    review.genres.each{|x| x.destroy}
+    review.actors.each{|x| x.destroy}
   end
 
 
