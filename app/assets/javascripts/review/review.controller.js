@@ -10,7 +10,7 @@
         var vm = this;
 
         vm.getReview = getReview;
-        vm.updateReview = updateReview;
+        vm.editReviewRating = editReviewRating;
         vm.deleteReview = deleteReview;
         vm.createReviewInformation = createReviewInformation;
         vm.reset = reset;
@@ -79,7 +79,8 @@
           
         }
 
-        function updateReview() {
+        function editReviewRating() {
+          return ReviewsFactory.updateReview(this.newReview)
           
         }
 

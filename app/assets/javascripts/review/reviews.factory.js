@@ -3,7 +3,7 @@
       .module('those-movie-guys')
       .factory('ReviewsFactory', ReviewsFactory)
 
-    function ReviewsFactory($http)  {
+    function ReviewsFactory($stateParams, $http)  {
 
       return {
         getReviews: getReviews,
@@ -50,8 +50,22 @@
         }
 
 
-      function updateReview() {
+      function updateReview(rating) {
 
+        var reviewId = location.hash.slice(15)
+        var req = {
+          method: 'PATCH',
+          url: '/reviews/'+reviewId,
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          data: {
+            review: rating
+          }
+        };
+        console.log(req)
+        return $http(req)
+                .catch(handleError)
       }
 
       function deleteReview(id) {

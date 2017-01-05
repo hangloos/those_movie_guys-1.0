@@ -30,10 +30,16 @@
           })
 
           .state('createReview', {
-            url: '/review/create',
+            url: '/reviews/create',
             templateUrl: 'review/new.html',
             controller: 'ReviewController as vm',
           })
+
+           .state('editReview',  {
+             url: "/reviews/edit/:id",
+             templateUrl: "review/edit.html",
+             controller: 'ReviewController as vm' 
+           })
 
           $urlRouterProvider.otherwise('/')
 

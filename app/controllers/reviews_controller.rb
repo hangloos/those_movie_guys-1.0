@@ -19,7 +19,7 @@ class ReviewsController < ApplicationController
     render json: review
   end
 
-  def update 
+  def update
     review = Review.find_by_id(params[:id])
     if review.update(review_params)
       render json: review
