@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::Base
-  #protect_from_forgery with: :null_session
+  protect_from_forgery with: :exception
+  respond_to :json
   before_action :configure_permitted_parameters, if: :devise_controller?
+
 
 
   def set_csrf_cookie_for_ng
