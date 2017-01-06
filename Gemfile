@@ -37,8 +37,6 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'devise'
 
-gem 'pry'
-
 gem 'active_model_serializers'
 
 gem 'angular-rails-templates'
@@ -50,6 +48,7 @@ gem 'omniauth-facebook'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem 'pry'
 end
 
 group :development do
