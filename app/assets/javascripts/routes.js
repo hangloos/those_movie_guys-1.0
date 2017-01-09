@@ -29,6 +29,12 @@
             controller: 'HomeController as vm'
           })
 
+          .state('admin', {
+            url: '/admin/login',
+            templateUrl: 'admin/login.html',
+            controller: 'AdminController as vm'
+          })
+
           .state('reviews', {
             url: '/reviews',
             templateUrl: 'review/reviews.html',

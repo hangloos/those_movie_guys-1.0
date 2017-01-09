@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :admins
   resources :genres
   resources :reviews, only: [:index, :show, :create, :update, :destroy]
   devise_for :users
