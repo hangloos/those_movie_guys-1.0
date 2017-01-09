@@ -1,15 +1,30 @@
 <p ng-if="!!error ">Error registering - {{ error }} </p>
 <p ng-if="!!errors ">Errors registering - {{ errors }} </p>
 
+<div class="column">
+  <form class="ui form" ng-submit="vm.register()" ng-if="!currentUser.username">
+      <div class="field">
+        <label>Username</label>
+        <div class="ui left icon input">
+          <input type="text" ng-model="vm.userForm.username" required>
+          <i class="user icon"></i>
+        </div>
+      </div>
+      <div class="field">
+        <label>Email</label>
+        <div class="ui left icon input">
+          <input type="text" ng-model="vm.userForm.email" required>
+          <i class="mail icon"></i>
+        </div>
+      </div>
+      <div class="field">
+        <label>Password</label>
+        <div class="ui left icon input">
+          <input type="password" ng-model="vm.userForm.password" required>
+          <i class="lock icon"></i>
+        </div>
+      </div>
 
-<form ng-if="!currentUser.username" ng-submit="vm.register()">
-  <label for="username">Username:</label>
-  <input type="text" ng-model="vm.newUser.username"><br>
-  <label for="email">Email:</label>
-  <input type="email" ng-model="vm.newUser.email"><br>
-  <label for="password">Password:</label>
-  <input type="password" ng-model="vm.newUser.password"><br>
-  <label for="admin">Admin:</label>
-  <input type="checkbox" ng-model="vm.newUser.admin"><br>
-  <input type="submit" value="Register">
-</form>
+      <div class="ui blue submit button">Register</div>
+    </form>
+  </div>

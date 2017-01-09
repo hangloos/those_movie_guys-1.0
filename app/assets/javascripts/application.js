@@ -18,3 +18,4 @@
 //= require angular-devise
 //= require semantic-ui
 //= require_tree .
+

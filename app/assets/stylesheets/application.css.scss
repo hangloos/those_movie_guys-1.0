@@ -38,7 +38,7 @@
   font-size: 20px;
 }
 
-.tmgRating  {
+#tmgRating  {
   background-color: blue;
   color: #fff;
   padding: .2em .6em .3em;
@@ -46,6 +46,14 @@
 
 .imdbLogo {
   width:  40px;
+}
+
+#ratingsText  {
+  font-size: 20pt
+}
+
+#basicText  {
+  color: black;
 }
 
 .outer-p-3 {

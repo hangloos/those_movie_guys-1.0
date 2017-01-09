@@ -1,2 +1,6 @@
-<h1 ng-if="currentUser">Welcome {{currentUser.username}}</h1> <button class="logoutButton" ng-if="currentUser.username" ng-click="vm.logout()">Log Out</button>
+
+<div class="right menu">
+    <a class="ui item" ng-if="currentUser.username" ng-click="vm.logout()">Log Out</a>
+  </div>
+</div>
 

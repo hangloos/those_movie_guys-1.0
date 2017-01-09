@@ -1,51 +1,54 @@
-<h1 ng-if="!!currentUser.username"> Welcome {{currentUser.username}}</h1>
+<div class=" ui three column grid" ng-repeat="review in vm.reviews | orderBy: '+':true | filter:search">
+<div class="ui card column">
+  <a class="image" href="http://imdb.com/title/{{ review.imdb_id }}" target="_blank">
+    <img ng-src="{{ review.picture_url }}" position:relative>
+  </a>
+  <div class="content">
+    <a class="header" align="left" href="http://imdb.com/title/{{ review.imdb_id }}" target="_blank">{{review.title}}</a>
+    <div class="meta">
+      <a class="time" id="tmgRating">{{review.those_movie_guys_rating}}</a><i class="edit icon" ng-click="vm.showEditForm()"></i>
+    </div>
+  </div>
+</div>
 
-<button ng-if="!!currentUser.username" ng-click="vm.logout()">Logout</button>
-
-
-<input type="text" ng-model="search.title" ng-model-options="{ debounce: 800 }" class="form-control" placeholder="Search By Movie Title" autofocus /> <input type="text" ng-model="search.those_movie_guys_rating" ng-model-options="{ debounce: 800 }" class="form-control" placeholder="Search By Rating" autofocus /> <input type="text" ng-model="search.genres.name" ng-model-options="{ debounce: 800 }" class="form-control" placeholder="Search By Genre" autofocus />
-
-<ul class="body" ng-repeat="review in vm.reviews | orderBy: '+':true | filter:search">
-
-  <img ng-src="{{ review.picture_url }}" class="thumbnail movie-poster">
-
-
-        <span class="span-outer"><a href="http://imdb.com/title/{{ review.imdb_id }}" target="_blank">{{ review.title }}</a></span>- <span class="tmgRating">{{ review.those_movie_guys_rating }}</span> - {{review.viewing_platform}} - <button ng-click="vm.Bookmark()">Bookmark</button>
-        <br>
-
-        <span class="span-outer"><a href="http://imdb.com/title/{{ review.imdb_id }}" target="_blank"><img src="http://ia.media-imdb.com/images/M/MV5BMTQyMTcxNjg5Nl5BMl5BcG5nXkFtZTgwOTgzNDg0MjE@._V1_.png" class="imdbLogo"> - {{review.imdb_rating}}</a></span>
-
-        <span class="span-outer"><a href="{{review.tomato_url}}" target="_blank"><img src="http://static.tvtropes.org/pmwiki/pub/images/rotten_tomatoes_8290.jpg" class="imdbLogo"> - RT Critics - {{review.tomato_critics}}%</a></span>
-
-        <span class="span-outer"><a href="{{review.tomato_url}}" target="_blank"><img src="http://static.tvtropes.org/pmwiki/pub/images/rotten_tomatoes_8290.jpg" class="imdbLogo"> - RT User - {{review.tomato_user}}%</a></span>
-
-        <br>
-          <label>Directors:</label>
-          <span>{{review.director}}</span>
-        <br>
-          <label>Actors:</label>
-          <span ng-repeat="x in review.actors"><a target="_blank" href="http://www.imdb.com/find?ref_=nv_sr_fn&q={{x.name}}&s=name">{{x.name}} </a></span>
-        <br>
-          <label>Writers:</label>
-          <span>{{review.writer}}</span>
-        <br>
-          <label>Runtime:</label>
-          <span>{{review.runtime}}</span>
-        <br>
-          <label>Genres:</label>
-          <span ng-repeat="x in review.genres"><a target="_blank" href="http://www.imdb.com/search/title?genres={{x.name}}&explore={{x.name}}">{{x.name}} </a></span>
-
-          <button ng-click="vm.deleteReview(review.id)">Delete</button>
-          <button ng-click="vm.showEditForm()">Edit</button>
-
-          <form ng-show="vm.editTrueValue" ng-submit="vm.editReviewRating(review.id)">
-          <div >
-              <label>Rating</label>
+          <form class="ui form" ng-show="vm.editTrueValue" ng-submit="vm.editReviewRating(review.id)">
+          <div class="field">
               <input type="number" step="0.1" ng-model="vm.newReview.those_movie_guys_rating" placeholder="Rating 1-10 (Decimal)" required>
           </div>
-           <button  type="submit">Edit</button>
+           <button  type="submit">Submit Edit</button>
           <button type="reset" ng-click="vm.reset()">Reset</button>
           </form>
 
+  <div class="column">
+    <div class="content">
+      <img src="http://ia.media-imdb.com/images/M/MV5BMTQyMTcxNjg5Nl5BMl5BcG5nXkFtZTgwOTgzNDg0MjE@._V1_.png" class="imdbLogo">
+      <a href="http://imdb.com/title/{{ review.imdb_id }}" target="_blank" id="ratingsText">{{review.imdb_rating}}</a>
+      <img src="http://static.tvtropes.org/pmwiki/pub/images/rotten_tomatoes_8290.jpg" class="imdbLogo">
+      <a href="{{review.tomato_url}}" target="_blank" id="ratingsText">RT Critics - {{review.tomato_critics}}%</a>
+      <img src="http://static.tvtropes.org/pmwiki/pub/images/rotten_tomatoes_8290.jpg" class="imdbLogo">
+      <a href="{{review.tomato_url}}" target="_blank" id="ratingsText">RT Users - {{review.tomato_user}}%</a>
+    </div>
 
-</ul>
+
+
+    <div class="column">
+    <div class="content">
+      <p class="ui header">Directors: {{review.director}}</p>
+    </div>
+    <div class="content">
+      <a class="ui header">Actors: </a><a ng-repeat="x in review.actors"target="_blank" href="http://www.imdb.com/find?ref_=nv_sr_fn&q={{x.name}}&s=name">{{x.name}} </a>
+    </div>
+    <div class="content">
+      <p class="ui header">Writers: {{review.writer}}</p>
+    </div>
+    <div class="content">
+      <p class="ui header">Runtime: {{review.runtime}}</p>
+    </div>
+    <div class="content">
+      <a class="ui header">Genres: </a><a ng-repeat="x in review.genres" target="_blank" href="http://www.imdb.com/search/title?genres={{x.name}}&explore={{x.name}}">{{x.name}} </a>
+    </div>
+    </div>
+
+</div>
+</div>
+

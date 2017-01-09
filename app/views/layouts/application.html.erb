@@ -10,22 +10,34 @@
 
     <!-- <i class="home icon" ui-sref="home">Home</i><i ui-sref="reviews" class="browser icon"> Reviews</i><a ng-if="!currentUser.username" ui-sref="login">Login</a><a ng-if="!currentUser.username" ui-sref="register">Register</a><a ui-sref="about">About Those Movie Guys</a> -->
 
-    <div class="ui text menu">
-    <div class="item">
-    <img ng-src="https://instagram.ford1-1.fna.fbcdn.net/t51.2885-19/s150x150/15624479_367086753646406_5616840053683650560_a.jpg"></div>
-    <a class="browse item">
-    Those Movie Guys
-    <i class="dropdown icon"></i>
-    </a>
-    <div class="menu">
-      <div class="item" ui-sref="home">Home</div>
-      <div class="item" ui-sref="reviews">Reviews</div>
-      <div class="item" ui-sref="login">Login</div>
-      <div class="item" ui-sref="register">Register</div>
-      <div class="item" ui-sref="about">About</div>
-      <div class="item" ng-if="currentUser" ui-sref="createReview">Create Review</div> 
-    </div>
-    </div>
+  <!--  <div class="ui five item menu">
+      <a class="active item" ui-sref="home">Home</a>
+      <a class="item" ui-sref="reviews">Reviews</a>
+      <a class="item" ui-sref="login">Login</a>
+      <a class="item" ui-sref="register">Register</a>
+      <a class="item" ui-sref="about">About</a>
+  </div> -->
+
+<!-- 
+  <div class="ui  menu">
+  <a class="active item" ui-sref="home">
+    Home
+  </a>
+  <a class="item" ui-sref="reviews">
+    Reviews
+  </a>
+  <a class="item" ui-sref="about">
+    About
+  </a>
+  <a class="item" ui-sref="login" ng-if="!currentUser.username">
+    Login
+  </a>
+  <a class="item" ui-sref="register" ng-if="!currentUser.username">
+    Register
+  </a> -->
+
+
+
 
     
 
