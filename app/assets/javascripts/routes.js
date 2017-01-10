@@ -31,7 +31,7 @@
 
           .state('admin', {
             url: '/admin/login',
-            templateUrl: 'admin/login.html',
+            templateUrl: 'superadmin/login.html',
             controller: 'AdministratorController as vm'
           })
 
