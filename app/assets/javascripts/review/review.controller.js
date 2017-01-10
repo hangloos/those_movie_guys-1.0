@@ -45,20 +45,10 @@
           vm.newReview.imdb_votes = movie.imdbVotes
           vm.newReview.tomato_consensus = movie.tomatoConsensus
           
-          if (movie.tomatoUserMeter = "N/A")  {
-              vm.newReview.tomato_user = 0
-            }
-            else  {
-              vm.newReview.tomato_user = movie.tomatoUserMeter
-            }
-
-
-          if (movie.tomatoMeter = "N/A")  {
-              vm.newReview.tomato_critics = 0
-            }
-            else  {
-              vm.newReview.tomato_critics = movie.tomatoMeter
-            }  
+          vm.newReview.tomato_user = movie.tomatoUserMeter
+          
+          vm.newReview.tomato_critics = movie.tomatoMeter
+        
 
           vm.newReview.tomato_url = movie.tomatoURL
           var genre_array = []
