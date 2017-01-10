@@ -32,7 +32,7 @@
           .state('admin', {
             url: '/admin/login',
             templateUrl: 'admin/login.html',
-            controller: 'AdminController as vm'
+            controller: 'AdministratorController as vm'
           })
 
           .state('reviews', {

@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
 
   end
 
-   protected
+  protected
 
   def configure_permitted_parameters
     added_attrs = [:username, :email, :password, :password_confirmation, :remember_me]

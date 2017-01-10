@@ -27,9 +27,9 @@
         }
 
         function setNewReview(movie) {
+
           
           vm.newReview.title = movie.Title
-          vm.newReview.actors = movie.Actors
           vm.newReview.awards = movie.Awards
           vm.newReview.box_office = movie.BoxOffice
           vm.newReview.director = movie.Director
@@ -44,8 +44,22 @@
           vm.newReview.imdb_rating = movie.imdbRating
           vm.newReview.imdb_votes = movie.imdbVotes
           vm.newReview.tomato_consensus = movie.tomatoConsensus
-          vm.newReview.tomato_user = movie.tomatoUserMeter
-          vm.newReview.tomato_critics = movie.tomatoMeter
+          
+          if (movie.tomatoUserMeter = "N/A")  {
+              vm.newReview.tomato_user = 0
+            }
+            else  {
+              vm.newReview.tomato_user = movie.tomatoUserMeter
+            }
+
+
+          if (movie.tomatoMeter = "N/A")  {
+              vm.newReview.tomato_critics = 0
+            }
+            else  {
+              vm.newReview.tomato_critics = movie.tomatoMeter
+            }  
+
           vm.newReview.tomato_url = movie.tomatoURL
           var genre_array = []
           var genres = movie.Genre.split(", ")
@@ -53,6 +67,7 @@
           for ( var i = 0; i < genres.length; i++)  {
             genre_array.push({name: genres[i]})
           }
+
 
           vm.newReview.genres_attributes = genre_array
 
@@ -64,6 +79,7 @@
            }
 
            vm.newReview.actors_attributes = actor_array
+
 
           return ReviewsFactory.createReview(vm.newReview)
                             .then(getReviews)
@@ -110,7 +126,7 @@
          }
 
          function Bookmark()  {
-          debugger
+          
          }
     
 
