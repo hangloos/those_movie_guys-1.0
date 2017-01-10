@@ -5,6 +5,8 @@ class Review < ApplicationRecord
   has_many :actor_reviews
   has_many :actors, :through => :actor_reviews
 
+  has_many :comments
+
   #belongs_to :admin
 
   ## this causes error - admin must exist??

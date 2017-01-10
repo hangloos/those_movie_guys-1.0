@@ -7,4 +7,6 @@ class ReviewSerializer < ActiveModel::Serializer
   has_many :actor_reviews
   has_many :actors, :through => :actor_reviews
 
+  has_many :comments
+
 end
